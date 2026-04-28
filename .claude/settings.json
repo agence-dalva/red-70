@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(npm run dev)",
+      "PowerShell(git init)",
+      "PowerShell(git add .)",
+      "PowerShell(git commit -m \"Initial commit\")",
+      "Read(//c/Program Files/Git/bin/**)",
+      "PowerShell($git = \"C:\\\\Program Files\\\\Git\\\\bin\\\\git.exe\"; Set-Location \"c:\\\\Users\\\\Valentin\\\\red-70\"; & $git init; & $git add .; & $git commit -m \"Initial commit\")"
+    ]
+  }
+}
