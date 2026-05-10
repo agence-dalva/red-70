@@ -12,85 +12,183 @@ type GalleryItem = {
   span?: string;
 };
 
-const categories = ["Tout", "Isolation", "Revêtement", "Plomberie", "Domotique", "PMR", "Collectivités"];
+const categories = [
+  "Tout",
+  "Isolation",
+  "Cloisonnement et plafond",
+  "Revêtement sol et mur",
+  "Plomberie",
+  "Domotique",
+  "Montage et pose",
+  "Accessibilité PMR",
+  "Divers",
+  "Rénovation complète",
+  "Collectivités et ERP",
+];
+
+const B = "/Photos%20ancien%20site/";
 
 const galleryItems: GalleryItem[] = [
-  {
-    id: 1,
-    title: "Isolation des combles perdus",
-    category: "Isolation",
-    src: "https://picsum.photos/seed/combles1/1200/900",
-    span: "col-span-2 row-span-2",
-  },
-  {
-    id: 2,
-    title: "Carrelage salle de bain",
-    category: "Revêtement",
-    src: "https://picsum.photos/seed/carrelage1/800/600",
-  },
-  {
-    id: 3,
-    title: "Parquet massif salon",
-    category: "Revêtement",
-    src: "https://picsum.photos/seed/parquet1/800/600",
-  },
-  {
-    id: 4,
-    title: "Installation sanitaire",
-    category: "Plomberie",
-    src: "https://picsum.photos/seed/sanitaire1/1200/600",
-    span: "col-span-2",
-  },
-  {
-    id: 5,
-    title: "Volets et éclairage connectés",
-    category: "Domotique",
-    src: "https://picsum.photos/seed/domotique1/800/600",
-  },
-  {
-    id: 6,
-    title: "Salle de bain PMR",
-    category: "PMR",
-    src: "https://picsum.photos/seed/pmr1/800/1200",
-    span: "row-span-2",
-  },
-  {
-    id: 7,
-    title: "Faux plafond bureau",
-    category: "Collectivités",
-    src: "https://picsum.photos/seed/bureau1/800/600",
-  },
-  {
-    id: 8,
-    title: "Isolation murs extérieurs",
-    category: "Isolation",
-    src: "https://picsum.photos/seed/isolation2/800/600",
-  },
-  {
-    id: 9,
-    title: "Carrelage cuisine moderne",
-    category: "Revêtement",
-    src: "https://picsum.photos/seed/cuisine1/800/600",
-  },
-  {
-    id: 10,
-    title: "Réseau plomberie neuf",
-    category: "Plomberie",
-    src: "https://picsum.photos/seed/plomberie2/800/600",
-  },
-  {
-    id: 11,
-    title: "Smart Home complet",
-    category: "Domotique",
-    src: "https://picsum.photos/seed/smarthome1/800/600",
-  },
-  {
-    id: 12,
-    title: "Salle polyvalente",
-    category: "Collectivités",
-    src: "https://picsum.photos/seed/salle1/1200/600",
-    span: "col-span-2",
-  },
+  // ── ISOLATION ──────────────────────────────────────────────────────────
+  { id: 1,  title: "Isolation de plafond",          category: "Isolation", src: `${B}03.jpg`, span: "col-span-2 row-span-2" },
+  { id: 2,  title: "Laine de verre sous plafond",   category: "Isolation", src: `${B}IMG_20180719_100642.jpg` },
+  { id: 3,  title: "Isolation laine de verre",      category: "Isolation", src: `${B}IMG_20180719_100709.jpg` },
+  { id: 4,  title: "Isolation laine de verre",      category: "Isolation", src: `${B}IMG_20180719_100725.jpg` },
+  { id: 5,  title: "Isolation Isover mur",          category: "Isolation", src: `${B}IMG_20190204_150307.jpg` },
+
+  // ── CLOISONNEMENT ET PLAFOND ───────────────────────────────────────────
+  { id: 6,  title: "Ossature plafond suspendu",     category: "Cloisonnement et plafond", src: `${B}AYNANAS%20av0.jpg`, span: "col-span-2 row-span-2" },
+  { id: 7,  title: "Pose de BA13",                  category: "Cloisonnement et plafond", src: `${B}AYNANS%20av1.jpg` },
+  { id: 8,  title: "Cloisonnement en cours",        category: "Cloisonnement et plafond", src: `${B}AYNANS%20av3.jpg` },
+  { id: 9,  title: "Cloisonnement en cours",        category: "Cloisonnement et plafond", src: `${B}AYNANS%20av4.jpg` },
+  { id: 10, title: "Cloisonnement en cours",        category: "Cloisonnement et plafond", src: `${B}AYNANS%20av5.jpg` },
+  { id: 11, title: "Plaque BA13 hydrofuge",         category: "Cloisonnement et plafond", src: `${B}IMG_20180726_162310.jpg` },
+  { id: 12, title: "Cloison BA13",                  category: "Cloisonnement et plafond", src: `${B}IMG_20180726_162322.jpg` },
+  { id: 13, title: "Faux plafond cuisine spots",    category: "Cloisonnement et plafond", src: `${B}IMG_20180809_163204.jpg` },
+  { id: 14, title: "Plafond suspendu LED",          category: "Cloisonnement et plafond", src: `${B}IMG_20180809_163541.jpg` },
+  { id: 15, title: "BA13 isolation sous rampant",   category: "Cloisonnement et plafond", src: `${B}IMG_20180830_183722.jpg` },
+  { id: 16, title: "Cloison combles aménagés",      category: "Cloisonnement et plafond", src: `${B}IMG_20180830_183743.jpg` },
+  { id: 17, title: "Cloisonnement combles",         category: "Cloisonnement et plafond", src: `${B}IMG_20180830_183809.jpg` },
+  { id: 18, title: "Faux plafond après travaux",    category: "Cloisonnement et plafond", src: `${B}FP%20apr%C3%A8s.jpg` },
+  { id: 19, title: "Faux plafond avant travaux",    category: "Cloisonnement et plafond", src: `${B}FP%20avant.jpg` },
+
+  // ── REVÊTEMENT SOL ET MUR ─────────────────────────────────────────────
+  { id: 20, title: "Carrelage salle de bain",       category: "Revêtement sol et mur", src: `${B}AA.jpg`, span: "col-span-2 row-span-2" },
+  { id: 21, title: "Salle de bain terminée",        category: "Revêtement sol et mur", src: `${B}AAapres.jpg` },
+  { id: 22, title: "Salle de bain avant travaux",   category: "Revêtement sol et mur", src: `${B}AAavant.jpg` },
+  { id: 23, title: "Carrelage mural",               category: "Revêtement sol et mur", src: `${B}AAmur.jpg` },
+  { id: 24, title: "Pose carrelage en cours",       category: "Revêtement sol et mur", src: `${B}AApendant.jpg` },
+  { id: 25, title: "Carrelage en progression",      category: "Revêtement sol et mur", src: `${B}AApendant2.jpg` },
+  { id: 26, title: "WC suspendu carrelé",           category: "Revêtement sol et mur", src: `${B}2013-03-08%2011.52.17.jpg` },
+  { id: 27, title: "Pose faïence salle de bain",    category: "Revêtement sol et mur", src: `${B}2013-03-11%2017.10.49.jpg` },
+  { id: 28, title: "Revêtement mural faïence",      category: "Revêtement sol et mur", src: `${B}2013-03-12%2018.41.51.jpg` },
+  { id: 29, title: "Finition carrelage",            category: "Revêtement sol et mur", src: `${B}2013-03-20%2016.18.49.jpg` },
+  { id: 30, title: "Receveur douche en cours",      category: "Revêtement sol et mur", src: `${B}IMG_20190705_085308.jpg` },
+  { id: 31, title: "Sèche-serviette sur faïence",   category: "Revêtement sol et mur", src: `${B}IMG_20191016_142524.jpg` },
+  { id: 32, title: "Radiateur salle de bain",       category: "Revêtement sol et mur", src: `${B}IMG_20191016_142535.jpg` },
+  { id: 33, title: "Sol vinyle imitation bois",     category: "Revêtement sol et mur", src: `${B}IMG_20180831_114915.jpg` },
+  { id: 34, title: "Salle de bain noir et blanc",   category: "Revêtement sol et mur", src: `${B}j%C3%A91.jpg` },
+  { id: 35, title: "Baignoire et faïence",          category: "Revêtement sol et mur", src: `${B}j%C3%A92.jpg` },
+  { id: 36, title: "Niches carrelées douche",       category: "Revêtement sol et mur", src: `${B}Tribout%2005.jpg` },
+  { id: 37, title: "Salle de bain Lantenot",        category: "Revêtement sol et mur", src: `${B}LEsdb%20lantenot%20apr%C3%A8s.JPG` },
+
+  // ── PLOMBERIE ──────────────────────────────────────────────────────────
+  { id: 38, title: "Installation WC cuivre",        category: "Plomberie", src: `${B}PVC.jpg`, span: "col-span-2" },
+  { id: 39, title: "Réseau plomberie",              category: "Plomberie", src: `${B}Plomberie%201.jpg` },
+  { id: 40, title: "Plomberie sous plancher",       category: "Plomberie", src: `${B}Plomberie%202.jpg` },
+  { id: 41, title: "Collecteur eau multi-points",   category: "Plomberie", src: `${B}IMG_20201104_123703.jpg` },
+  { id: 42, title: "Évacuations douche",            category: "Plomberie", src: `${B}IMG_20190710_090735.jpg` },
+  { id: 43, title: "Plomberie salle de bain",       category: "Plomberie", src: `${B}IMG_20190710_090748.jpg` },
+  { id: 44, title: "Préparation receveur",          category: "Plomberie", src: `${B}IMG_20190710_090757.jpg` },
+
+  // ── DOMOTIQUE ──────────────────────────────────────────────────────────
+  { id: 45, title: "Portail motorisé",              category: "Domotique", src: `${B}Motorisation%201.jpg`, span: "col-span-2 row-span-2" },
+  { id: 46, title: "Portillon et volets motorisés", category: "Domotique", src: `${B}Motorisation%202.jpg` },
+  { id: 47, title: "Portail coulissant",            category: "Domotique", src: `${B}portail.jpg` },
+
+  // ── MONTAGE ET POSE ────────────────────────────────────────────────────
+  { id: 48, title: "Dressing sur mesure",           category: "Montage et pose", src: `${B}dressing1.jpg`, span: "col-span-2 row-span-2" },
+  { id: 49, title: "Dressing en cours de pose",     category: "Montage et pose", src: `${B}dressing2.jpg` },
+  { id: 50, title: "Dressing finition",             category: "Montage et pose", src: `${B}dressing3.jpg` },
+  { id: 51, title: "Installation douche",           category: "Montage et pose", src: `${B}douche.jpg` },
+  { id: 52, title: "Douche buanderie",              category: "Montage et pose", src: `${B}douchebuanderie.jpg` },
+  { id: 53, title: "Pose armoire dressing",         category: "Montage et pose", src: `${B}IMG_20180807_170011.jpg` },
+  { id: 54, title: "Montage salle de bain",         category: "Montage et pose", src: `${B}PANO_20180921_171813.jpg` },
+  { id: 55, title: "Pose salle de bain panorama",   category: "Montage et pose", src: `${B}PANO_20180921_172630.jpg` },
+  { id: 56, title: "Cuisine en cours de pose",      category: "Montage et pose", src: `${B}1623250735131.jpg` },
+  { id: 57, title: "Montage cuisine",               category: "Montage et pose", src: `${B}1623250758732.jpg` },
+  { id: 58, title: "Cuisine assemblage",            category: "Montage et pose", src: `${B}1623250767845.jpg` },
+  { id: 59, title: "Cuisine installée",             category: "Montage et pose", src: `${B}1623250775662.jpg` },
+  { id: 60, title: "Finition cuisine",              category: "Montage et pose", src: `${B}1623250795542.jpg` },
+  { id: 61, title: "Pose escalier bois et verre",   category: "Montage et pose", src: `${B}escalier_orig.jpg` },
+
+  // ── ACCESSIBILITÉ PMR ──────────────────────────────────────────────────
+  { id: 62, title: "Relais Vert PMR aménagé",       category: "Accessibilité PMR", src: `${B}PMR%20relais%20vert%20fini.jpg`, span: "col-span-2 row-span-2" },
+  { id: 63, title: "Marquage parking PMR",          category: "Accessibilité PMR", src: `${B}PMR%20V%C3%A9to%20marquage.jpg` },
+  { id: 64, title: "Bande podotactile",             category: "Accessibilité PMR", src: `${B}anti%20mouss%20relais%20vert.jpg` },
+  { id: 65, title: "WC PMR adapté",                 category: "Accessibilité PMR", src: `${B}IMG_20181128_145129.jpg` },
+  { id: 66, title: "Sanitaire PMR",                 category: "Accessibilité PMR", src: `${B}IMG_20181128_145145.jpg` },
+  { id: 67, title: "Détail aménagement PMR",        category: "Accessibilité PMR", src: `${B}IMG_20181128_145158.jpg` },
+  { id: 68, title: "WC PMR finition",               category: "Accessibilité PMR", src: `${B}IMG_20181128_145207.jpg` },
+
+  // ── DIVERS ─────────────────────────────────────────────────────────────
+  { id: 69, title: "Décoration murale stencil",     category: "Divers", src: `${B}Sniper.jpg`, span: "col-span-2 row-span-2" },
+  { id: 70, title: "Incrustation fleur de lys",     category: "Divers", src: `${B}canada.jpg` },
+  { id: 71, title: "Construction sauna bois",       category: "Divers", src: `${B}DE2.jpg` },
+  { id: 72, title: "Espace bien-être sauna",        category: "Divers", src: `${B}DEsauna.jpg` },
+  { id: 73, title: "Spa sauna aménagé",             category: "Divers", src: `${B}DESpa%20sauna.JPG` },
+  { id: 74, title: "Décoration craie sur vitrage",  category: "Divers", src: `${B}deco%20craie.jpg` },
+  { id: 75, title: "Mur en pierres",                category: "Divers", src: `${B}IMG_20210306_162949.jpg` },
+  { id: 76, title: "Maçonnerie pierres",            category: "Divers", src: `${B}IMG_20210308_170751.jpg` },
+  { id: 77, title: "Fondations extérieures",        category: "Divers", src: `${B}IMG_20180926_112429.jpg` },
+  { id: 78, title: "Fresque murale décorative",     category: "Divers", src: `${B}1647604363969.jpg` },
+  { id: 79, title: "Peinture décorative intérieure",category: "Divers", src: `${B}1647604374002.jpg` },
+  { id: 80, title: "Salamandre décorative",         category: "Divers", src: `${B}salamandre.jpg` },
+  { id: 81, title: "Aménagement piscine",           category: "Divers", src: `${B}Piscine.jpg` },
+  { id: 82, title: "Construction terrasse bois",    category: "Divers", src: `${B}P_20190515_144442.jpg` },
+  { id: 83, title: "Terrasse bois en cours",        category: "Divers", src: `${B}P_20190516_082255.jpg` },
+
+  // ── RÉNOVATION COMPLÈTE ────────────────────────────────────────────────
+  { id: 84,  title: "Rénovation maison ancienne",      category: "Rénovation complète", src: `${B}IMG_20180601_194141.jpg`, span: "col-span-2 row-span-2" },
+  { id: 85,  title: "Ouverture cloisons",              category: "Rénovation complète", src: `${B}IMG_20180601_194232.jpg` },
+  { id: 86,  title: "Chambre sous toit rénovée",       category: "Rénovation complète", src: `${B}IMG_20180921_172701.jpg` },
+  { id: 87,  title: "Combles aménagés finition",       category: "Rénovation complète", src: `${B}IMG_20180921_172713.jpg` },
+  { id: 88,  title: "Douche à l'italienne",            category: "Rénovation complète", src: `${B}IMG_20181116_151834.jpg`, span: "col-span-2" },
+  { id: 89,  title: "Salle de bain moderne",           category: "Rénovation complète", src: `${B}IMG_20180808_160930.jpg` },
+  { id: 90,  title: "Baignoire d'angle et douche",     category: "Rénovation complète", src: `${B}IMG_20181120_090407.jpg`, span: "col-span-2" },
+  { id: 91,  title: "Suite parentale salle de bain",   category: "Rénovation complète", src: `${B}IMG_20181120_090558.jpg` },
+  { id: 92,  title: "SDB avec poutres apparentes",     category: "Rénovation complète", src: `${B}IMG_20170217_102113.jpg` },
+  { id: 93,  title: "Rénovation grange",               category: "Rénovation complète", src: `${B}IMG_20170217_102220.jpg` },
+  { id: 94,  title: "Chambre aménagée grange",         category: "Rénovation complète", src: `${B}IMG_20170217_102254.jpg` },
+  { id: 95,  title: "Combles avant rénovation",        category: "Rénovation complète", src: `${B}IMG_20180814_092632.jpg` },
+  { id: 96,  title: "Structure combles",               category: "Rénovation complète", src: `${B}IMG_20180814_092638.jpg` },
+  { id: 97,  title: "Charpente avant travaux",         category: "Rénovation complète", src: `${B}IMG_20180814_092647.jpg` },
+  { id: 98,  title: "Salle de bain projet Clerc",      category: "Rénovation complète", src: `${B}Sdb%20clerc01.jpg` },
+  { id: 99,  title: "Finition salle de bain",          category: "Rénovation complète", src: `${B}Sdb%20clerc02.jpg` },
+  { id: 100, title: "Rénovation SDB Olivier",          category: "Rénovation complète", src: `${B}Sdb%20oliv00.jpg` },
+  { id: 101, title: "Douche faïence grise",            category: "Rénovation complète", src: `${B}Sdb%20oliv01.jpg` },
+  { id: 102, title: "Salle de bain complète",          category: "Rénovation complète", src: `${B}Sdb%20oliv02.jpg` },
+  { id: 103, title: "Baignoire et douche",             category: "Rénovation complète", src: `${B}Sdb%20oliv04.jpg` },
+  { id: 104, title: "Salle de bain finition",          category: "Rénovation complète", src: `${B}Sdb%20oliv08.jpg` },
+  { id: 105, title: "Baignoire projet Herzog",         category: "Rénovation complète", src: `${B}herzog%20Baignoire.jpg` },
+  { id: 106, title: "Douche projet Herzog",            category: "Rénovation complète", src: `${B}herzog%20douche.jpg` },
+  { id: 107, title: "Meuble vasque projet Herzog",     category: "Rénovation complète", src: `${B}herzog%20Meuble.jpg` },
+  { id: 108, title: "Après rénovation",                category: "Rénovation complète", src: `${B}IMG_ap.jpg` },
+  { id: 109, title: "Après travaux vue 1",             category: "Rénovation complète", src: `${B}IMG_Ap1.jpg` },
+  { id: 110, title: "Après travaux vue 2",             category: "Rénovation complète", src: `${B}IMG_Ap2.jpg` },
+  { id: 111, title: "Avant rénovation",                category: "Rénovation complète", src: `${B}IMG_av.jpg` },
+  { id: 112, title: "État avant travaux vue 1",        category: "Rénovation complète", src: `${B}IMG_Av1.jpg` },
+  { id: 113, title: "État avant travaux vue 2",        category: "Rénovation complète", src: `${B}IMG_Av2.jpg` },
+  { id: 114, title: "Après rénovation complète",       category: "Rénovation complète", src: `${B}SDF%20apres.jpg` },
+  { id: 115, title: "Avant rénovation",                category: "Rénovation complète", src: `${B}SDF%20Avant.jpg` },
+  { id: 116, title: "Rénovation projet Alex",          category: "Rénovation complète", src: `${B}Alex%2002.jpg` },
+  { id: 117, title: "Chantier rénovation Alex",        category: "Rénovation complète", src: `${B}Alex%2011.jpg` },
+  { id: 118, title: "Finitions chantier Alex",         category: "Rénovation complète", src: `${B}Alex%2012.jpg` },
+  { id: 119, title: "Rénovation maison ancienne",      category: "Rénovation complète", src: `${B}1647603956321.jpg` },
+  { id: 120, title: "Chantier en cours",               category: "Rénovation complète", src: `${B}1647604040913.jpg` },
+  { id: 121, title: "Rénovation intérieure",           category: "Rénovation complète", src: `${B}1647604120694.jpg` },
+  { id: 122, title: "Chantier rénovation 2019",        category: "Rénovation complète", src: `${B}IMG_20190213_112521.jpg` },
+  { id: 123, title: "Chantier 2018",                   category: "Rénovation complète", src: `${B}IMG_20180711_105029.jpg` },
+  { id: 125, title: "Chantier soirée",                 category: "Rénovation complète", src: `${B}IMG_20180810_195053.jpg` },
+  { id: 126, title: "Chantier juillet 2018",           category: "Rénovation complète", src: `${B}IMG_20180719_164315.jpg` },
+
+  // ── COLLECTIVITÉS ET ERP ──────────────────────────────────────────────
+  { id: 127, title: "Foyer rural rénové",              category: "Collectivités et ERP", src: `${B}Foyer%20rural%2002.jpg`, span: "col-span-2 row-span-2" },
+  { id: 128, title: "Salle communautaire",             category: "Collectivités et ERP", src: `${B}Foyer%20rural%2003.jpg` },
+  { id: 129, title: "Salle des fêtes",                 category: "Collectivités et ERP", src: `${B}Foyer%20rural%2004.jpg` },
+  { id: 130, title: "Patrimoine local rénové",         category: "Collectivités et ERP", src: `${B}Foyer%20rural%2005.jpg` },
+  { id: 131, title: "Pôle éducatif",                   category: "Collectivités et ERP", src: `${B}pole-educatif_1.jpg` },
+  { id: 132, title: "Foyer rural plafond suspendu",    category: "Collectivités et ERP", src: `${B}IMG_20181019_150513.jpg` },
+  { id: 133, title: "Foyer rural terminé",             category: "Collectivités et ERP", src: `${B}IMG_20181019_150605.jpg` },
+  { id: 134, title: "Bâtiment collectif extérieur",    category: "Collectivités et ERP", src: `${B}1623250629731.jpg` },
+  { id: 135, title: "Rénovation collectivité",         category: "Collectivités et ERP", src: `${B}Antoine%2001.jpg` },
+  { id: 136, title: "Chantier bâtiment collectif",    category: "Collectivités et ERP", src: `${B}Antoine%2002.jpg` },
+  { id: 137, title: "Rénovation bâtiment Antoine",    category: "Collectivités et ERP", src: `${B}Antoine%2003.jpg` },
+  { id: 138, title: "Chantier collectivité",           category: "Collectivités et ERP", src: `${B}Antoine%2004.jpg` },
+  { id: 139, title: "Travaux collectivité",            category: "Collectivités et ERP", src: `${B}Antoine%2005.jpg` },
+  { id: 140, title: "Bâtiment collectif",              category: "Collectivités et ERP", src: `${B}Antoine%2006.jpg` },
+  { id: 141, title: "Finitions collectivité",          category: "Collectivités et ERP", src: `${B}Antoine%2007.jpg` },
+  { id: 142, title: "Rénovation terminée",             category: "Collectivités et ERP", src: `${B}Antoine%2008.jpg` },
 ];
 
 export default function Gallery() {
@@ -116,6 +214,14 @@ export default function Gallery() {
   }, [currentIndex, filtered]);
 
   useEffect(() => {
+    const saved = sessionStorage.getItem("galleryFilter");
+    if (saved && categories.includes(saved)) {
+      setActiveFilter(saved);
+      sessionStorage.removeItem("galleryFilter");
+    }
+  }, []);
+
+  useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (!selectedItem) return;
       if (e.key === "Escape") setSelectedItem(null);
@@ -132,7 +238,7 @@ export default function Gallery() {
   }, [selectedItem]);
 
   return (
-    <section id="galerie" className="relative py-28 bg-[#080808]">
+    <section className="relative py-16 bg-[#080808]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <motion.div
@@ -196,7 +302,6 @@ export default function Gallery() {
                 onClick={() => setSelectedItem(item)}
                 className={`relative group cursor-pointer rounded-2xl overflow-hidden bg-[#111] ${item.span ?? ""}`}
               >
-                {/* Image */}
                 <Image
                   src={item.src}
                   alt={item.title}
@@ -204,24 +309,7 @@ export default function Gallery() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                 />
-
-                {/* Permanent subtle gradient at bottom */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent z-10" />
-
-                {/* Hover dark overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-400 z-20" />
-
-                {/* Info — always visible at bottom, more prominent on hover */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 z-30 translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                  <div className="text-red-400 text-[10px] font-semibold uppercase tracking-wider mb-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {item.category}
-                  </div>
-                  <div className="text-white font-bold text-sm leading-tight drop-shadow-lg">
-                    {item.title}
-                  </div>
-                </div>
-
-                {/* Zoom icon */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-400 z-20" />
                 <div className="absolute top-3 right-3 z-30 w-8 h-8 rounded-full bg-white/0 group-hover:bg-white/20 backdrop-blur-sm flex items-center justify-center transition-all duration-300 scale-0 group-hover:scale-100">
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -252,7 +340,6 @@ export default function Gallery() {
               className="relative w-full max-w-5xl"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Image */}
               <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-[#111]">
                 <Image
                   src={selectedItem.src}
@@ -263,21 +350,6 @@ export default function Gallery() {
                   priority
                 />
               </div>
-
-              {/* Caption */}
-              <div className="mt-5 flex items-center justify-between px-1">
-                <div>
-                  <div className="text-red-400 text-xs font-semibold uppercase tracking-wider mb-1">
-                    {selectedItem.category}
-                  </div>
-                  <h3 className="text-white font-bold text-xl">{selectedItem.title}</h3>
-                </div>
-                <div className="text-white/30 text-sm tabular-nums">
-                  {currentIndex + 1} / {filtered.length}
-                </div>
-              </div>
-
-              {/* Close */}
               <button
                 onClick={() => setSelectedItem(null)}
                 className="absolute -top-12 right-0 w-9 h-9 rounded-full bg-white/8 hover:bg-white/18 flex items-center justify-center text-white/60 hover:text-white transition-all"
@@ -286,8 +358,6 @@ export default function Gallery() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
               </button>
-
-              {/* Prev */}
               {currentIndex > 0 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); goPrev(); }}
@@ -298,8 +368,6 @@ export default function Gallery() {
                   </svg>
                 </button>
               )}
-
-              {/* Next */}
               {currentIndex < filtered.length - 1 && (
                 <button
                   onClick={(e) => { e.stopPropagation(); goNext(); }}

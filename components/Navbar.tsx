@@ -5,10 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 
 const links = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Services", href: "#services" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/#accueil" },
+  { label: "Services", href: "/#services" },
+  { label: "Galerie", href: "/galerie" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -67,7 +67,7 @@ export default function Navbar() {
           {/* CTA + social */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/EntrepriseRED70"
               target="_blank"
               rel="noopener noreferrer"
               className="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-600/20 border border-white/10 hover:border-blue-500/40 text-white/50 hover:text-blue-400 transition-all duration-300"

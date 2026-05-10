@@ -12,6 +12,7 @@ const services = [
     title: "Isolation",
     desc: "Thermique et acoustique — combles, murs, sols. Réduisez vos factures énergétiques durablement.",
     color: "from-orange-600/10",
+    galleryCategory: "Isolation",
   },
   {
     icon: (
@@ -22,6 +23,7 @@ const services = [
     title: "Cloisons & plafonds",
     desc: "Cloisons sèches, faux plafonds, contre-cloisons. Optimisez et transformez vos espaces.",
     color: "from-blue-600/10",
+    galleryCategory: "Cloisonnement et plafond",
   },
   {
     icon: (
@@ -32,6 +34,7 @@ const services = [
     title: "Revêtement",
     desc: "Carrelage, parquet, lino, peinture, faïence. Des sols et murs qui font la différence.",
     color: "from-amber-600/10",
+    galleryCategory: "Revêtement sol et mur",
   },
   {
     icon: (
@@ -42,6 +45,7 @@ const services = [
     title: "Plomberie",
     desc: "Installation, rénovation et dépannage. Salle de bain, cuisine, chauffe-eau, robinetterie.",
     color: "from-cyan-600/10",
+    galleryCategory: "Plomberie",
   },
   {
     icon: (
@@ -52,6 +56,7 @@ const services = [
     title: "Domotique",
     desc: "Maison connectée, volets automatisés, éclairage intelligent, alarme et vidéosurveillance.",
     color: "from-violet-600/10",
+    galleryCategory: "Domotique",
   },
   {
     icon: (
@@ -63,6 +68,7 @@ const services = [
     title: "Montage & pose",
     desc: "Meubles, mobilier de cuisine, dressing, escalier, garde-corps. Montage et installation sur mesure.",
     color: "from-green-600/10",
+    galleryCategory: "Montage et pose",
   },
   {
     icon: (
@@ -73,6 +79,7 @@ const services = [
     title: "Accessibilité PMR",
     desc: "Aménagements pour personnes à mobilité réduite : rampes, barres d'appui, douche de plain-pied.",
     color: "from-teal-600/10",
+    galleryCategory: "Accessibilité PMR",
   },
   {
     icon: (
@@ -83,6 +90,7 @@ const services = [
     title: "Divers",
     desc: "Petits travaux, réparations, finitions, aménagements extérieurs. Aucun chantier n'est trop petit.",
     color: "from-pink-600/10",
+    galleryCategory: "Divers",
   },
   {
     icon: (
@@ -93,6 +101,7 @@ const services = [
     title: "Rénovation complète",
     desc: "Prise en charge totale de votre projet de rénovation, du gros œuvre aux finitions.",
     color: "from-red-600/10",
+    galleryCategory: "Rénovation complète",
   },
   {
     icon: (
@@ -103,6 +112,7 @@ const services = [
     title: "Collectivités",
     desc: "Bâtiments publics, locaux professionnels, immeubles collectifs. Référence et expérience.",
     color: "from-indigo-600/10",
+    galleryCategory: "Collectivités et ERP",
   },
 ];
 
@@ -140,24 +150,36 @@ export default function Services() {
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {services.map((service, i) => (
-            <motion.div
+            <motion.a
               key={service.title}
+              href={service.galleryCategory ? "/galerie" : undefined}
+              onClick={service.galleryCategory ? () => {
+                sessionStorage.setItem("galleryFilter", service.galleryCategory!);
+              } : undefined}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-40px" }}
               transition={{ delay: (i % 4) * 0.08, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="group relative p-6 rounded-2xl bg-[#111] border border-white/6 hover:border-red-600/25 transition-all duration-300 cursor-default overflow-hidden"
+              className={`group relative p-6 rounded-2xl bg-[#111] border border-white/6 hover:border-red-600/25 transition-all duration-300 overflow-hidden flex flex-col ${service.galleryCategory ? "cursor-pointer" : "cursor-default"}`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.color} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl`} />
-              <div className="relative z-10">
+              <div className="relative z-10 flex-1">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center text-red-400 mb-4 group-hover:bg-red-600/15 group-hover:border-red-600/30 group-hover:text-red-300 transition-all duration-300">
                   {service.icon}
                 </div>
                 <h3 className="text-white font-bold text-base mb-2 leading-tight">{service.title}</h3>
                 <p className="text-white/45 text-sm leading-relaxed">{service.desc}</p>
               </div>
-            </motion.div>
+              {service.galleryCategory && (
+                <div className="relative z-10 mt-4 flex items-center gap-1.5 text-red-500/0 group-hover:text-red-400 text-xs font-semibold transition-all duration-300 translate-y-1 group-hover:translate-y-0 opacity-0 group-hover:opacity-100">
+                  Voir les réalisations
+                  <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              )}
+            </motion.a>
           ))}
 
           {/* CTA card */}

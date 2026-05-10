@@ -46,10 +46,11 @@ export default function Hero() {
 
       {/* Floating orbs */}
       {[
-        { w: 320, h: 320, x: "8%", y: "20%", delay: 0, dur: 6 },
-        { w: 180, h: 180, x: "80%", y: "15%", delay: 1, dur: 7 },
-        { w: 240, h: 240, x: "65%", y: "60%", delay: 2, dur: 8 },
-        { w: 120, h: 120, x: "25%", y: "70%", delay: 0.5, dur: 5 },
+        { w: 380, h: 380, x: "5%",  y: "18%", delay: 0,   dur: 9,  dx: [0, 30, -20, 15, 0],  dy: [0, -40, 20, -30, 0],  s: [1, 1.12, 0.94, 1.06, 1] },
+        { w: 200, h: 200, x: "78%", y: "12%", delay: 1.5, dur: 11, dx: [0, -25, 18, -10, 0], dy: [0, 30, -45, 20, 0],   s: [1, 0.9, 1.1, 0.95, 1] },
+        { w: 280, h: 280, x: "62%", y: "55%", delay: 3,   dur: 13, dx: [0, 20, -30, 10, 0],  dy: [0, -25, 35, -15, 0],  s: [1, 1.08, 0.92, 1.04, 1] },
+        { w: 150, h: 150, x: "22%", y: "68%", delay: 0.8, dur: 7,  dx: [0, -18, 25, -8, 0],  dy: [0, 35, -20, 28, 0],   s: [1, 1.15, 0.88, 1.1, 1] },
+        { w: 100, h: 100, x: "45%", y: "82%", delay: 2,   dur: 8,  dx: [0, 22, -12, 8, 0],   dy: [0, -30, 18, -22, 0],  s: [1, 1.2, 0.9, 1.05, 1] },
       ].map((orb, i) => (
         <motion.div
           key={i}
@@ -61,15 +62,16 @@ export default function Hero() {
             top: orb.y,
             background:
               i % 2 === 0
-                ? "radial-gradient(circle, rgba(220,38,38,0.06), transparent 70%)"
-                : "radial-gradient(circle, rgba(255,255,255,0.02), transparent 70%)",
+                ? "radial-gradient(circle, rgba(220,38,38,0.09), transparent 70%)"
+                : "radial-gradient(circle, rgba(255,80,80,0.04), transparent 70%)",
           }}
-          animate={{ y: [0, -24, 0], scale: [1, 1.04, 1] }}
+          animate={{ x: orb.dx, y: orb.dy, scale: orb.s, opacity: [0.7, 1, 0.8, 1, 0.7] }}
           transition={{
             duration: orb.dur,
             repeat: Infinity,
             ease: "easeInOut",
             delay: orb.delay,
+            times: [0, 0.25, 0.5, 0.75, 1],
           }}
         />
       ))}
@@ -138,7 +140,7 @@ export default function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
           </a>
           <a
-            href="#galerie"
+            href="/galerie"
             className="px-8 py-4 bg-white/5 hover:bg-white/10 text-white font-semibold text-base rounded-xl border border-white/10 hover:border-white/25 transition-all duration-300 hover:scale-105"
           >
             Voir nos réalisations

@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Accueil", href: "#accueil" },
-  { label: "Services", href: "#services" },
-  { label: "Galerie", href: "#galerie" },
-  { label: "Contact", href: "#contact" },
+  { label: "Accueil", href: "/#accueil" },
+  { label: "Services", href: "/#services" },
+  { label: "Galerie", href: "/galerie" },
+  { label: "Contact", href: "/#contact" },
   { label: "CGV", href: "/cgv" },
 ];
 
@@ -34,7 +34,7 @@ export default function Footer() {
               Entreprise de rénovation tous corps d'état intervenant en Haute-Saône et dans les départements limitrophes.
             </p>
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/EntrepriseRED70"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 hover:bg-blue-600/20 hover:border-blue-500/40 transition-all duration-300 text-sm font-medium"
@@ -98,6 +98,14 @@ export default function Footer() {
                 </div>
                 Haute-Saône (70)
               </div>
+              <div className="flex items-center gap-3 text-white/40 text-sm">
+                <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                Lun – Sam &nbsp;·&nbsp; 8h – 19h
+              </div>
             </div>
           </div>
         </div>
@@ -109,7 +117,14 @@ export default function Footer() {
           </p>
           <p className="text-white/20 text-xs">
             Site réalisé par{" "}
-            <span className="text-white/40 font-medium">Valentin Informatique</span>
+            <a
+              href="https://www.agence-dalva.fr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 font-medium hover:text-white/70 transition-colors duration-200"
+            >
+              l&apos;agence Web DALVA
+            </a>
           </p>
         </div>
       </div>
