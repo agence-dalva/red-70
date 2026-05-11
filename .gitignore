@@ -26,3 +26,7 @@ Thumbs.db
 
 # Claude
 .claude/
+
+# Generated at install
+tsconfig.json
+next-env.d.ts
