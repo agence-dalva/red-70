@@ -49,7 +49,7 @@ const contactInfo = [
       </svg>
     ),
     label: "Disponibilité",
-    value: "Lun–Sam 8h–19h",
+    value: "Du lundi au samedi de 8h à 19h",
     href: null,
   },
 ];
