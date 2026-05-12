@@ -75,10 +75,23 @@ export default function Contact() {
       return;
     }
     setSubmitting(true);
-    // Simulated send — replace with your API route (Resend, EmailJS, etc.)
-    await new Promise((r) => setTimeout(r, 1500));
-    setSubmitting(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) {
+        const data = await res.json();
+        setError(data.error || "Une erreur est survenue. Veuillez réessayer.");
+        return;
+      }
+      setSubmitted(true);
+    } catch {
+      setError("Une erreur réseau est survenue. Veuillez réessayer.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
