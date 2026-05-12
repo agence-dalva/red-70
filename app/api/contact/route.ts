@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
   }
 
   const { error } = await resend.emails.send({
-    from: "Contact RED-70 <onboarding@resend.dev>",
+    from: "Contact RED-70 <contact@red-70.com>",
     to: "Red-70@live.fr",
     replyTo: email,
     subject: `Nouvelle demande de devis — ${name}`,
