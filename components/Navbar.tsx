@@ -46,7 +46,6 @@ export default function Navbar() {
             </div>
             <div>
               <div className="font-black text-xl text-white tracking-widest leading-none">RED 70</div>
-              <div className="text-[9px] text-red-400 tracking-[0.25em] uppercase mt-0.5">Sol au plafond</div>
             </div>
           </Link>
 
