@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 const links = [
   { label: "Accueil", href: "/#accueil" },
@@ -37,16 +38,16 @@ export default function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link href="#accueil" className="flex items-center gap-3 group" onClick={closeMenu}>
-            <div className="relative">
-              <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center font-black text-lg text-white group-hover:scale-110 transition-transform duration-300 shadow-[0_0_20px_rgba(220,38,38,0.4)]">
-                R
-              </div>
-              <div className="absolute -inset-1 bg-red-600/20 rounded-2xl blur-md group-hover:bg-red-600/40 transition-all duration-300" />
-            </div>
-            <div>
-              <div className="font-black text-xl text-white tracking-widest leading-none">RED 70</div>
-              <div className="text-[9px] text-red-400 tracking-[0.25em] uppercase mt-0.5">Sol au plafond</div>
+          <Link href="/#accueil" className="flex items-center gap-3 group" onClick={closeMenu}>
+            <div className="relative group-hover:scale-110 transition-transform duration-300">
+              <Image
+                src="/logo-red70.png"
+                alt="RED 70"
+                width={233}
+                height={121}
+                priority
+                className="h-12 w-auto"
+              />
             </div>
           </Link>
 

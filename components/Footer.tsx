@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Accueil", href: "/#accueil" },
@@ -20,15 +21,13 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="relative">
-                <div className="w-10 h-10 bg-red-600 rounded-xl flex items-center justify-center font-black text-lg text-white shadow-[0_0_20px_rgba(220,38,38,0.35)]">
-                  R
-                </div>
-              </div>
-              <div>
-                <div className="font-black text-xl text-white tracking-widest leading-none">RED 70</div>
-                <div className="text-[9px] text-red-400 tracking-[0.25em] uppercase mt-0.5">Sol au plafond</div>
-              </div>
+              <Image
+                src="/logo-red70.png"
+                alt="RED 70"
+                width={233}
+                height={121}
+                className="h-12 w-auto"
+              />
             </div>
             <p className="text-white/40 text-sm leading-relaxed mb-5 max-w-xs">
               Entreprise de rénovation tous corps d'état intervenant en Haute-Saône et dans les départements limitrophes.

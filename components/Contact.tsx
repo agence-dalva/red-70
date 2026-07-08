@@ -8,6 +8,7 @@ type FormData = {
   email: string;
   phone: string;
   message: string;
+  company: string;
 };
 
 const contactInfo = [
@@ -58,10 +59,11 @@ const inputClass =
   "w-full px-4 py-3.5 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 text-sm focus:outline-none focus:border-red-500/50 focus:bg-white/8 focus:shadow-[0_0_0_3px_rgba(220,38,38,0.1)] transition-all duration-300";
 
 export default function Contact() {
-  const [form, setForm] = useState<FormData>({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState<FormData>({ name: "", email: "", phone: "", message: "", company: "" });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+  const [startedAt] = useState(() => Date.now());
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -79,7 +81,7 @@ export default function Contact() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, elapsedMs: Date.now() - startedAt }),
       });
       if (!res.ok) {
         const data = await res.json();
@@ -219,7 +221,7 @@ export default function Contact() {
                       <p className="text-white/50">Nous vous répondrons dans les plus brefs délais, généralement sous 24–48h.</p>
                     </div>
                     <button
-                      onClick={() => { setSubmitted(false); setForm({ name: "", email: "", phone: "", message: "" }); }}
+                      onClick={() => { setSubmitted(false); setForm({ name: "", email: "", phone: "", message: "", company: "" }); }}
                       className="px-6 py-2.5 rounded-xl bg-white/8 hover:bg-white/12 text-white text-sm font-medium transition-colors"
                     >
                       Envoyer un autre message
@@ -233,6 +235,20 @@ export default function Contact() {
                     onSubmit={handleSubmit}
                     className="space-y-4"
                   >
+                    {/* Honeypot field — hidden from real users, catches bots that auto-fill every input */}
+                    <div className="absolute -left-[9999px] top-0 w-px h-px overflow-hidden" aria-hidden="true">
+                      <label htmlFor="company">Ne pas remplir ce champ</label>
+                      <input
+                        id="company"
+                        name="company"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={form.company}
+                        onChange={handleChange}
+                      />
+                    </div>
+
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-white/50 text-xs uppercase tracking-wider mb-2">Nom *</label>

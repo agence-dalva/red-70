@@ -4,7 +4,17 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: NextRequest) {
-  const { name, email, phone, message } = await req.json();
+  const { name, email, phone, message, company, elapsedMs } = await req.json();
+
+  // Honeypot: real visitors never see or fill this field.
+  if (company) {
+    return NextResponse.json({ success: true });
+  }
+
+  // Bots typically submit near-instantly; reject anything under 3s.
+  if (typeof elapsedMs === "number" && elapsedMs < 3000) {
+    return NextResponse.json({ success: true });
+  }
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Champs obligatoires manquants." }, { status: 400 });
@@ -12,7 +22,7 @@ export async function POST(req: NextRequest) {
 
   const { error } = await resend.emails.send({
     from: "Contact RED-70 <contact@red-70.com>",
-    to: "Red-70@live.fr",
+    to: "red-70@live.fr",
     replyTo: email,
     subject: `Nouvelle demande de devis — ${name}`,
     html: `
