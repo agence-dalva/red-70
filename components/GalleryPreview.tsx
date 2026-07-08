@@ -4,15 +4,13 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-const B = "/Photos%20ancien%20site/";
-
 const previewItems = [
-  { id: 84, title: "Rénovation maison ancienne", src: `${B}IMG_20180601_194141.jpg`, span: "col-span-2 row-span-2" },
-  { id: 20, title: "Carrelage salle de bain",    src: `${B}AA.jpg`,                  span: "col-span-2 row-span-2" },
-  { id: 39, title: "Réseau plomberie",            src: `${B}Plomberie%201.jpg`,       span: "" },
-  { id: 69, title: "Décoration murale",           src: `${B}Sniper.jpg`,              span: "" },
-  { id: 45, title: "Portail motorisé",            src: `${B}Motorisation%201.jpg`,    span: "" },
-  { id: 48, title: "Dressing sur mesure",         src: `${B}dressing1.jpg`,           span: "" },
+  { id: 110, title: "Rénovation maison ancienne", src: "/Photos/R%C3%A9novation%20compl%C3%A8te/IMG_20180601_194141.jpg", span: "col-span-2 row-span-2" },
+  { id: 112, title: "Salle de bain rénovée",      src: "/Photos/R%C3%A9novation%20compl%C3%A8te/AA.jpg",                  span: "col-span-2 row-span-2" },
+  { id: 51,  title: "Réseau plomberie",            src: "/Photos/Plomberie/Plomberie%201.jpg",                            span: "" },
+  { id: 80,  title: "Décoration murale",           src: "/Photos/Divers/Sniper.jpg",                                      span: "" },
+  { id: 55,  title: "Portail motorisé",            src: "/Photos/Domotique/Motorisation%201.jpg",                         span: "" },
+  { id: 60,  title: "Dressing sur mesure",         src: "/Photos/Montage%20et%20pose/dressing1.jpg",                      span: "" },
 ];
 
 export default function GalleryPreview() {
@@ -79,7 +77,7 @@ export default function GalleryPreview() {
           className="flex flex-col items-center gap-3"
         >
           <p className="text-white/35 text-sm">
-            142 photos · 10 catégories
+            167 photos · 10 catégories
           </p>
           <Link
             href="/galerie"
